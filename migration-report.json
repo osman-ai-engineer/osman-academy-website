@@ -1,0 +1,31 @@
+{
+  "sourceSite": "C:\\Users\\mdosm\\OneDrive\\Documents\\Osman Group of Companies\\Osman Academy\\osman-academy-site",
+  "sourceBooks": "C:\\Users\\mdosm\\OneDrive\\Documents\\Osman Group of Companies\\Osman Academy\\osman-academy-books",
+  "migratedMarkdownFiles": 47,
+  "changes": [
+    "Navigation consolidated",
+    "How We Teach and team moved to About Us",
+    "Product section added",
+    "Unlaunched live community/session promises removed from homepage",
+    "Unconfirmed completed certification claim omitted from About Us",
+    "Program content retained with terminology and CTA changes"
+  ],
+  "legacyRoutes": {
+    "index.html": "/",
+    "index.html#top": "/",
+    "index.html#how-we-teach": "/about#how-we-teach",
+    "index.html#team": "/about#team",
+    "index.html#paths": "/programs",
+    "index.html#learning-paths": "/programs#learning-programs",
+    "index.html#faq": "/#faq",
+    "ai-fundamentals.html": "/programs/ai-fundamentals",
+    "ai-associate.html": "/programs/ai-associate",
+    "ai-developer.html": "/programs/ai-developer",
+    "ai-architect.html": "/programs/ai-architect",
+    "privacy.html": "/privacy",
+    "terms.html": "/terms",
+    "disclaimer.html": "/disclaimer",
+    "cancellations-and-refunds.html": "/cancellations-and-refunds",
+    "ai-diligence-statement.html": "/ai-diligence-statement"
+  }
+}

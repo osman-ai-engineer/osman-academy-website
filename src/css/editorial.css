@@ -1,0 +1,152 @@
+/* Osman Academy editorial theme. Inspired by the observed Academy design;
+   uses Osman branding and the project's existing Lora/Poppins fonts. */
+:root {
+  --ifm-background-color:#f9f9f7;
+  --ifm-background-surface-color:#fcfcfb;
+  --ifm-font-color-base:#0b0b0b;
+  --ifm-heading-color:#0b0b0b;
+  --ifm-font-family-base:'Poppins',Arial,sans-serif;
+  --ifm-heading-font-family:'Lora',Georgia,serif;
+  --ifm-heading-font-weight:400;
+  --ifm-color-primary:#137d3c;
+  --ifm-navbar-height:65px;
+  --ifm-link-color:#137d3c;
+  --ifm-line-height-base:1.75;
+  --oa-white:#f9f9f7;
+  --oa-black:#0b0b0b;
+}
+html {scroll-behavior:smooth;scroll-padding-top:65px;}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+.navbar {height:65px;border-bottom:1px solid #0b0b0b1a;background:#f9f9f7;}
+.navbar__brand {font-family:Lora,Georgia,serif;font-size:21px;gap:3px;}
+.navbar__title {font-weight:500;}
+.navbar__logo {height:28px;opacity:.9;}
+.navbar__link {font-size:13px;text-transform:none;letter-spacing:0;font-weight:400;color:#52514e;}
+.navbar__link--active {color:#137d3c;}
+.footer {background:#edece8;border-top:1px solid #0b0b0b1a;color:#52514e;}
+.footer__title {font-weight:500;color:#0b0b0b;}
+.footer__link-item,.footer__copyright {color:#52514e;}
+.footer__link-item:hover {color:#137d3c;}
+.button {border-radius:10px;font-size:14px;}
+a:focus-visible,button:focus-visible,summary:focus-visible {outline:2px solid #137d3c;outline-offset:4px;}
+
+/* Translate the original dark-page tokens to warm paper and ink. */
+main.academy-content {
+  --black:#f9f9f7;--white:#0b0b0b;
+  --black-rgb:249,249,247;--white-rgb:11,11,11;
+  --green:#137d3c;--green-rgb:19,125,60;
+  --blue:#426987;--blue-rgb:66,105,135;
+  --wood:#916344;--wood-rgb:145,99,68;
+  --card:#fcfcfb;--line:#0b0b0b1a;
+  background:#f9f9f7;color:#0b0b0b;
+  font-family:Poppins,Arial,sans-serif;
+}
+.academy-content[class] h1,.academy-content[class] h2,.academy-content[class] h3,.academy-content[class] h4 {
+  font-family:Lora,Georgia,serif;font-weight:400;color:#0b0b0b;letter-spacing:-.025em;
+}
+.academy-content[class] h1 {font-size:46px;line-height:1.15;}
+.academy-content[class] .head h2 {font-size:32px;line-height:1.3;color:#0b0b0b;}
+.academy-content[class] h3 {font-size:22px;line-height:1.35;}
+.academy-content[class] .section,.academy-content[class] .section.light {background:#f9f9f7;color:#0b0b0b;padding:64px 0;}
+.academy-content[class] .section.alt {background:#f1f1ed;}
+.academy-content[class] .hero {background:#edece8;color:#0b0b0b;padding:64px 0;}
+.academy-content[class] .hero::before {background:none;}
+.academy-content[class] .wrap {max-width:1152px;padding-left:32px;padding-right:32px;}
+.academy-content[class] .hero-inner {gap:40px;}
+.academy-content[class] .hero-art img {border-radius:16px;border:1px solid #0b0b0b12;}
+.academy-content[class] .lede {color:#52514e;font-family:Poppins,Arial,sans-serif;font-size:16px;line-height:1.8;}
+.academy-content[class] .head p,.academy-content[class] .section.light .head p {color:#52514e;font-size:15px;line-height:1.85;}
+.academy-content[class] .head {margin-bottom:32px;}
+.academy-content[class] .kicker {color:#137d3c;font-size:11px;font-weight:500;letter-spacing:.09em;}
+.academy-content[class] .btn {border-radius:10px;padding:11px 18px;font-size:13px;font-weight:500;line-height:1.5;box-shadow:none;transition:background .15s ease;}
+.academy-content[class] .btn:hover {transform:none;}
+.academy-content[class] .btn.solid {background:#137d3c;border:1px solid #137d3c;color:#fff;}
+.academy-content[class] .btn.solid:hover {background:#106b33;}
+.academy-content[class] .btn.ghost,.academy-content[class] .btn.soft {background:transparent;border:1px solid #0b0b0b26;color:#137d3c;}
+.academy-content[class] button:disabled {background:#e3e5df!important;border-color:#d5d8ce!important;color:#62665c!important;opacity:1;}
+.academy-content[class] .mstep,.academy-content[class] .team-card,.academy-content[class] .tl-card,
+.academy-content[class] .capability-card,.academy-content[class] .process-card,.academy-content[class] .track-card {
+  background:#fcfcfb;border:1px solid #0b0b0b1a;border-radius:16px;box-shadow:0 1px 2px #0b0b0b08;
+}
+.academy-content[class] .mstep {transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease;}
+.academy-content[class] .mstep:hover,.academy-content[class] .mstep:focus-within {
+  background:#fcfcfb;border-color:#137d3c;outline:2px solid #137d3c;outline-offset:2px;box-shadow:0 6px 18px #137d3c1f;transform:translateY(-3px);
+}
+.academy-content[class] .team-card {transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;}
+.academy-content[class] .team-card:hover,.academy-content[class] .team-card:focus-within {
+  border-color:#137d3c;outline:2px solid #137d3c;outline-offset:2px;box-shadow:0 6px 18px #137d3c1f;transform:translateY(-3px);
+}
+.academy-content[class] .tl-card {transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;}
+.academy-content[class] .tl-card:hover,.academy-content[class] .tl-card:focus-within {
+  border-color:#137d3c;outline:2px solid #137d3c;outline-offset:2px;box-shadow:0 6px 18px #137d3c1f;transform:translateY(-3px);
+}
+.academy-content[class] .mstep p,.academy-content[class] .team-card p,.academy-content[class] .tl-card p,
+.academy-content[class] .capability-card p,.academy-content[class] .process-card p {color:#52514e;font-size:14px;line-height:1.8;}
+.academy-content[class] .mnum,.academy-content[class] .step-num {background:#eef2ea;color:#137d3c;border:1px solid #d6e1d1;}
+.academy-content[class] .mtag {font-weight:500;}
+.academy-content[class] .team-checks,.academy-content[class] .role {color:#52514e;}
+.academy-content[class] .avatar {background:#eef2ea;color:#137d3c;}
+.academy-content[class] .journey {gap:20px;}
+.academy-content[class] .stop {background:#fcfcfb;border:1px solid #0b0b0b1a;border-radius:16px;box-shadow:0 1px 2px #0b0b0b0a;color:#0b0b0b;}
+.academy-content[class] .stop:hover {transform:translateY(-2px);box-shadow:0 3px 10px #0b0b0b0d;}
+.academy-content[class] .stop {transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;}
+.academy-content[class] .stop:hover,.academy-content[class] .stop:focus-visible {
+  border-color:#137d3c;outline:2px solid #137d3c;outline-offset:2px;box-shadow:0 6px 18px #137d3c1f;transform:translateY(-3px);
+}
+.academy-content[class] .thumb {background:#dedcd1;border-radius:0;}
+.academy-content[class] .gear {background:transparent;border-color:transparent;}
+.academy-content[class] .ribbon {background:#f9f9f7;color:#52514e;border:1px solid #0b0b0b1a;font-weight:400;}
+.academy-content[class] .stopbody {padding:20px;}
+.academy-content[class] .stopbody h3 {color:#0b0b0b;font-size:22px;}
+.academy-content[class] .stopbody .sfor {color:#52514e;font-family:Poppins,Arial,sans-serif;font-size:13px;line-height:1.8;}
+.academy-content[class] .cta-dark {background:transparent;color:#137d3c;border:0;padding:0;font-weight:500;}
+.academy-content[class] summary {color:#0b0b0b;font-weight:500;font-size:14px;}
+.academy-content[class] details p,.academy-content[class] details em {color:#52514e;}
+.academy-content[class] details {border-color:#0b0b0b1a;}
+.academy-content[class] .definition {background:#fcfcfb;border-color:#137d3c;color:#0b0b0b;}
+.academy-content[class] .plain-list,.academy-content[class] .system-list {color:#52514e;}
+.academy-content[class] .legal p,.academy-content[class] .legal li {color:#52514e;}
+.oa-home:not(.oa-about) #how-we-teach,.oa-home:not(.oa-about) #team {display:none;}
+.academy-content[class] .purpose-grid article {
+  background:#fcfcfb;border:1px solid #0b0b0b1a;border-radius:16px;padding:24px;
+  box-shadow:0 1px 2px #0b0b0b08;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+.academy-content[class] .purpose-grid article:hover,.academy-content[class] .purpose-grid article:focus-within {
+  border-color:#137d3c;outline:2px solid #137d3c;outline-offset:2px;box-shadow:0 6px 18px #137d3c1f;transform:translateY(-3px);
+}
+
+.program-layout {background:#f9f9f7;}
+.program-sidebar {top:65px;max-height:calc(100vh - 65px);background:#f9f9f7;}
+.sidebar-title {font-family:Lora,Georgia,serif;font-weight:400;font-size:20px;}
+.program-layout .academy-content h1 {font-size:38px;}
+.program-layout .academy-content .hero {padding:48px 0;}
+.program-layout .academy-content .head h2 {font-size:28px;}
+.library-page,.journal-page {max-width:1152px;padding-top:56px;}
+.library-header h1,.journal-page h1 {font-family:Lora,Georgia,serif;font-size:48px;font-weight:400;letter-spacing:-.025em;line-height:1.15;}
+.library-header>p,.journal-intro {font-size:16px;color:#52514e;}
+.book-info h2,.library-note h2,.journal-empty h2 {font-family:Lora,Georgia,serif;font-weight:400;}
+.book-cover {box-shadow:0 1px 3px #0b0b0b15;border-radius:3px 12px 12px 3px;}
+.cover-title {font-family:Lora,Georgia,serif;font-weight:400;}
+.markdown h1,.markdown h2,.markdown h3 {font-weight:400;}
+.markdown h1 {font-size:38px;line-height:1.25;}
+.markdown p,.markdown li {font-size:15px;line-height:1.85;}
+.theme-admonition {border-radius:10px;background:#eef2ea;}
+.menu,.table-of-contents,.breadcrumbs {font-family:Poppins,Arial,sans-serif;}
+@media(max-width:996px){
+  .academy-content[class] .mobile-sections {top:65px;background:#f9f9f7;}
+  .academy-content[class] .hero-inner {grid-template-columns:1fr;}
+  .academy-content[class] .hero-copy {max-width:672px;text-align:left;}
+  .academy-content[class] .hero-ctas {justify-content:flex-start;}
+}
+@media(max-width:600px){
+  .navbar__brand {font-size:19px;}
+  .academy-content[class] .wrap {padding-left:20px;padding-right:20px;}
+  .academy-content[class] .section,.academy-content[class] .section.light,.academy-content[class] .hero {padding:44px 0;}
+  .academy-content[class] h1,.library-header h1,.journal-page h1 {font-size:36px;}
+  .academy-content[class] .head h2 {font-size:27px;}
+  .academy-content[class] .lede {font-size:15px;}
+  .academy-content[class] .head p {font-size:14px;}
+  .program-layout .academy-content h1,.markdown h1 {font-size:32px;}
+  .library-page,.journal-page {padding-top:44px;}
+  .cover-title {font-size:16px;}
+}
