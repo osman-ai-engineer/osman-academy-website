@@ -3,10 +3,10 @@ module.exports = {
   "title": "Osman Academy",
   "tagline": "Learn AI through detailed e-books and practical Udemy courses.",
   "favicon": "img/favicon-32.png",
-  "url": "https://osmanacademy.ai",
-  "baseUrl": "/",
+  "url": "https://osman-ai-engineer.github.io",
+  "baseUrl": "/osman-academy-website/",
   "organizationName": "osman-ai-engineer",
-  "projectName": "osman-academy-unified",
+  "projectName": "osman-academy-website",
   "trailingSlash": false,
   "onBrokenLinks": "throw",
   "markdown": {

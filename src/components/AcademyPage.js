@@ -2,12 +2,15 @@ import React, {useEffect, useRef, useState} from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useBrokenLinks from '@docusaurus/useBrokenLinks';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export default function AcademyPage({data}) {
+  const baseUrl = useBaseUrl('/');
+  const html = data.html.replace(/\b(href|src)="\/(?!\/)/g, `$1="${baseUrl}`);
   const brokenLinks = useBrokenLinks();
   // Register anchors in migrated HTML with Docusaurus's server-side validator.
   for (const match of data.html.matchAll(/\bid="([^"]+)"/g)) brokenLinks.collectAnchor(match[1]);
-  for (const match of data.html.matchAll(/\bhref="([^"]+)"/g)) {
+  for (const match of html.matchAll(/\bhref="([^"]+)"/g)) {
     if (!/^(?:[a-z]+:|\/\/)/i.test(match[1])) brokenLinks.collectLink(match[1]);
   }
   const [active, setActive] = useState('overview');
@@ -32,7 +35,7 @@ export default function AcademyPage({data}) {
   }, [data.key]);
   useEffect(() => {
     if (data.className !== 'oa-home' || !content.current) return;
-    content.current.querySelectorAll('a[href="#how-we-teach"]').forEach((link) => { link.href = '/about#how-we-teach'; });
+    content.current.querySelectorAll('a[href="#how-we-teach"]').forEach((link) => { link.href = `${baseUrl}about#how-we-teach`; });
     const primary = content.current.querySelector('#top .hero-ctas a');
     if (primary) { primary.href = '#programs'; primary.textContent = 'Discover Learning Programs'; }
     content.current.querySelectorAll('h2').forEach((heading) => {
@@ -59,7 +62,7 @@ export default function AcademyPage({data}) {
   useEffect(() => {
     if (!data.className?.includes('oa-about') || !content.current) return;
     const link = content.current.querySelector('#team .method-cta a');
-    if (link) { link.href = '/programs'; link.textContent = 'Discover our learning programs'; }
+    if (link) { link.href = `${baseUrl}programs`; link.textContent = 'Discover our learning programs'; }
   }, [data.className]);
   const sectionLinks = <ul>{data.toc.map(item => <li key={item.id}><a href={`#${item.id}`} aria-current={active === item.id ? 'location' : undefined} onClick={() => {setActive(item.id); if(mobileMenu.current) mobileMenu.current.open = false;}}>{item.label}</a></li>)}</ul>;
   return <Layout title={data.title} description={data.description}>
@@ -67,7 +70,7 @@ export default function AcademyPage({data}) {
       {data.toc.length > 0 && <aside className="program-sidebar"><Link className="program-back" to="/programs">← Learning Programs</Link><p className="sidebar-title">{data.title}</p><nav aria-label="Page sections">{sectionLinks}</nav><Link className="sidebar-book" to={`/books/${data.key}`}>Read the E-Book ↗</Link><span className="sidebar-status">Udemy course coming soon</span></aside>}
       <main id="main" className={`academy-content ${data.className}`} ref={content}>
         {data.toc.length > 0 && <details className="mobile-sections" ref={mobileMenu}><summary>On this page</summary><nav aria-label="Page sections on mobile">{sectionLinks}</nav></details>}
-        <div dangerouslySetInnerHTML={{__html:data.html}} />
+        <div dangerouslySetInnerHTML={{__html:html}} />
       </main>
     </div>
   </Layout>;
