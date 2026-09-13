@@ -1,6 +1,6 @@
 # Osman Academy — unified local preview
 
-Docusaurus site combining the academy pages, four AI program pages, and four draft e-books. This project is separate from both source sites. No GitHub push or deployment has been performed.
+Docusaurus site combining the academy pages, four AI program pages, and four draft e-books. This project is separate from both source sites.
 
 ## Run locally
 
