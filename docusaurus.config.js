@@ -68,8 +68,12 @@ module.exports = {
         "blog": {
           "path": "blog",
           "routeBasePath": "blog",
-          "blogTitle": "From the learning desk",
+          "blogTitle": "Osman Academy Blog",
           "blogDescription": "AI explanations, projects, and reflections from Osman Academy.",
+          "blogSidebarTitle": "All our posts",
+          "blogSidebarCount": "ALL",
+          "postsPerPage": 5,
+          "showReadingTime": true,
           "onUntruncatedBlogPosts": "ignore"
         },
         "theme": {
@@ -143,6 +147,7 @@ module.exports = {
     ]
   ],
   "themeConfig": {
+    "blog": {"sidebar": {"groupByYear": true}},
     "image": "img/oa-logo-social.png",
     "colorMode": {
       "defaultMode": "light",
@@ -164,8 +169,8 @@ module.exports = {
           "activeBaseRegex": "^/$"
         },
         {
-          "to": "/about",
-          "label": "About Us",
+          "to": "/story",
+          "label": "Our Story",
           "position": "right"
         },
         {
@@ -192,12 +197,12 @@ module.exports = {
           "title": "Explore",
           "items": [
             {
-              "label": "About Us",
-              "to": "/about"
+              "label": "Our Story",
+              "to": "/story"
             },
             {
               "label": "How We Teach",
-              "to": "/about#how-we-teach"
+              "to": "/story#how-we-teach"
             },
             {
               "label": "Learning Programs",
@@ -471,4 +476,3 @@ module.exports.plugins.slice(0, 4).forEach(([, options]) => {
 module.exports.plugins.push(function localBuildCache() {
   return {name: 'local-build-cache', configureWebpack() {return {cache: true};}};
 });
-

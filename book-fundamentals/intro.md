@@ -16,7 +16,7 @@ This e-book is being developed. Available chapters and planned material are incl
 
 :::note Independent educational material
 Not affiliated with, sponsored by, or endorsed by Anthropic or any course,
-certification body, or AI vendor. See [About these books](/about).
+certification body, or AI vendor. See [About these books](/story).
 :::
 
 This book is a plain-language companion for the **AI Fundamentals** program. It

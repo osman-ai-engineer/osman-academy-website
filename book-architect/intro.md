@@ -12,7 +12,7 @@ last_reviewed: 2026-09-10
 
 :::note Independent educational material
 Not affiliated with, sponsored by, or endorsed by Anthropic or any course,
-certification body, or AI vendor. See [About these books](/about).
+certification body, or AI vendor. See [About these books](/story).
 :::
 
 :::info In progress

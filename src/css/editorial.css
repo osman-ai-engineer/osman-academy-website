@@ -15,6 +15,44 @@
   --oa-white:#f9f9f7;
   --oa-black:#0b0b0b;
 }
+
+/* Global route loader using the Osman Academy gear-and-AI mark. */
+.oa-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: #f9f9f7;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .2s ease, visibility .2s ease;
+}
+.oa-loader--visible {opacity: 1;visibility: visible;}
+.oa-loader__mark {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  display: grid;
+  place-items: center;
+}
+.oa-loader__mark img {display:block;width:100%;height:100%;object-fit:contain;}
+.oa-loader__static,.oa-loader__gear {position:absolute;inset:0;}
+.oa-loader__gear {animation:oa-loader-spin 1.35s linear infinite;}
+.oa-loader__label {
+  color: #137d3c;
+  font-family: Poppins, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+@keyframes oa-loader-spin {to {transform:rotate(360deg);}}
+@media(prefers-reduced-motion:reduce){.oa-loader__gear{animation:none;}}
 html {scroll-behavior:smooth;scroll-padding-top:65px;}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
 .navbar {height:65px;border-bottom:1px solid #0b0b0b1a;background:#f9f9f7;}
@@ -115,6 +153,16 @@ main.academy-content {
   border-color:#137d3c;outline:2px solid #137d3c;outline-offset:2px;box-shadow:0 6px 18px #137d3c1f;transform:translateY(-3px);
 }
 
+/* generic breadcrumb + definition callout — usable on any academy-content page, not just program pages */
+.academy-content[class] .breadcrumb {font-family:Poppins,Arial,sans-serif;font-size:13px;color:#7a7a71;display:flex;align-items:center;gap:8px;margin-bottom:28px;flex-wrap:wrap;}
+.academy-content[class] .breadcrumb a {color:#137d3c;}
+.academy-content[class] .breadcrumb a:hover {text-decoration:underline;}
+.academy-content[class] .definition {background:#fcfcfb;border-left:3px solid #137d3c;border-color:#137d3c;border-radius:0 14px 14px 0;padding:26px 30px;font-family:Poppins,Arial,sans-serif;font-size:18.5px;line-height:1.55;font-weight:500;color:#0b0b0b;margin:6px 0 32px;}
+@media(max-width:600px){.academy-content[class] .definition{padding:22px 22px;font-size:16.5px;}}
+
+/* our story — section CTA spacing */
+.academy-content[class] #story-cta {margin-top:12px;}
+
 .program-layout {background:#f9f9f7;}
 .program-sidebar {top:65px;max-height:calc(100vh - 65px);background:#f9f9f7;}
 .sidebar-title {font-family:Lora,Georgia,serif;font-weight:400;font-size:20px;}
@@ -149,4 +197,52 @@ main.academy-content {
   .program-layout .academy-content h1,.markdown h1 {font-size:32px;}
   .library-page,.journal-page {padding-top:44px;}
   .cover-title {font-size:16px;}
+}
+
+
+/* Blog: Docusaurus article feed with Osman Academy typography. */
+.blog-wrapper main {min-width:0;}
+.blog-wrapper main article header h1,
+.blog-wrapper main article header h2 {font-family:Lora,Georgia,serif;font-size:40px;font-weight:400;line-height:1.2;letter-spacing:-.025em;}
+.blog-wrapper main article header h2 a {color:#137d3c;}
+.blog-wrapper main article header {margin-bottom:28px;}
+.blog-wrapper main article .markdown p,
+.blog-wrapper main article .markdown li {font-size:16px;line-height:1.85;}
+.blog-wrapper main article .markdown p {margin-bottom:1.4em;}
+.blog-wrapper main article .avatar__name {font-size:16px;}
+.blog-wrapper main article .avatar__subtitle {color:#52514e;font-size:13px;}
+.blog-wrapper main article footer {margin-top:28px;}
+.blog-wrapper aside nav {font-size:13px;}
+.blog-wrapper aside nav h3 {font-family:Poppins,Arial,sans-serif;font-size:16px;font-weight:600;}
+.blog-wrapper .pagination-nav__link {background:#fcfcfb;border-color:#0b0b0b1a;border-radius:12px;}
+@media(max-width:600px) {
+  .blog-wrapper main article header h1,
+  .blog-wrapper main article header h2 {font-size:30px;}
+}
+
+/* Our Story: comfortable prose and people-first team cards. */
+.academy-content.oa-about .story-section .wrap > p {font-size:1rem;line-height:1.85;margin:0 0 1.4em;}
+.academy-content.oa-about .story-section .wrap > p:last-child {margin-bottom:0;}
+.academy-content.oa-about .story-section {padding:48px 0;}
+.academy-content.oa-about .story-section + .story-section {padding-top:24px;}
+.academy-content.oa-about .hero .lede {max-width:65ch;font-size:1.0625rem;}
+.academy-content.oa-about .kicker {font-size:.75rem;}
+.academy-content.oa-about .btn {font-size:.875rem;}
+.academy-content.oa-about #story-cta {margin-top:28px;}
+.academy-content.oa-about .head.center {text-align:left;margin-left:0;margin-right:0;}
+.academy-content.oa-about .head p {max-width:none;font-size:1rem;line-height:1.85;margin:1.2em 0 0;text-align:left;}
+.academy-content.oa-about .team-card {text-align:left;padding:28px;border-top:3px solid #137d3c;}
+.academy-content.oa-about .team-card h3 {margin-top:0;}
+.academy-content.oa-about .team-card .role {color:#137d3c;font-size:.875rem;min-height:0;}
+.academy-content.oa-about .team-checks {margin-top:24px;}
+.academy-content.oa-about .team-card:hover {transform:none;box-shadow:0 1px 2px #0b0b0b08;outline:none;border-color:#0b0b0b1a;border-top-color:#137d3c;}
+@media (max-width:1100px) and (min-width:997px) {
+  .academy-content.oa-about .team-grid {grid-template-columns:1fr;}
+  .academy-content.oa-about .method {grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:600px) {
+  .academy-content.oa-about .story-section {padding:36px 0;}
+  .academy-content.oa-about .story-section + .story-section {padding-top:16px;}
+  .academy-content.oa-about .team-card {padding:24px;}
+  .academy-content.oa-about .hero-ctas {flex-wrap:wrap;}
 }
