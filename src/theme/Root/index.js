@@ -10,7 +10,7 @@ export default function Root({children}) {
 
   useEffect(() => {
     setLoading(true);
-    const timer = window.setTimeout(() => setLoading(false), 450);
+    const timer = window.setTimeout(() => setLoading(false), 850);
     return () => window.clearTimeout(timer);
   }, [location.pathname, location.search]);
 
