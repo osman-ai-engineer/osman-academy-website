@@ -158,7 +158,7 @@ module.exports = {
       "title": "Osman Academy",
       "logo": {
         "alt": "Osman Academy",
-        "src": "img/oa-logo-trimmed.png",
+        "src": "img/oa-logo.svg",
         "href": "/"
       },
       "items": [

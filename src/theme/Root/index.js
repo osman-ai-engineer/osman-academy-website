@@ -36,7 +36,7 @@ export default function Root({children}) {
         <img className="oa-loader__static" src={`${baseUrl}img/3.svg`} alt="" />
         <img className="oa-loader__gear" src={`${baseUrl}img/4.svg`} alt="" />
       </div>
-      <span className="oa-loader__label">Loading</span>
+      <span className="oa-loader__label" aria-hidden="true">Loading<span className="oa-loader__dots"><span>.</span><span>.</span><span>.</span></span></span>
     </div>
   </>;
 }
