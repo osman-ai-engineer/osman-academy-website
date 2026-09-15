@@ -4,6 +4,7 @@ sidebar_label: Changelog
 pagination_prev: null
 pagination_next: null
 sidebar_position: 99
+unlisted: true
 description: Substantive additions and revisions to the AI Fundamentals companion textbook.
 ---
 

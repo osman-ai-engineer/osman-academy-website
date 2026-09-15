@@ -467,8 +467,7 @@ module.exports = {
 module.exports.onBrokenAnchors = 'throw';
 module.exports.plugins.slice(0, 4).forEach(([, options]) => {
   options.sidebarItemsGenerator = async ({defaultSidebarItemsGenerator, ...args}) => {
-    const items = await defaultSidebarItemsGenerator({...args, docs: args.docs.filter(doc => doc.id !== 'changelog')});
-    return [...items, {type: 'link', label: 'Changelog', href: '/' + options.routeBasePath + '/changelog'}];
+    return defaultSidebarItemsGenerator({...args, docs: args.docs.filter(doc => doc.id !== 'changelog')});
   };
 });
 
