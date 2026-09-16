@@ -10,5 +10,3 @@ for (const file of fs.readdirSync(root)) {
   if (!html.includes('http-equiv="refresh"')) continue;
   fs.writeFileSync(target, html.replace(/(url=|href=")\/(?!\/)/g, `$1${base}`));
 }
-// Default GitHub Pages hosting must not claim the existing academy domain.
-fs.rmSync(path.join(root, 'CNAME'), {force:true});

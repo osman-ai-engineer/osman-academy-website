@@ -1,10 +1,10 @@
-// Unified local preview. Deployment is intentionally not configured.
+// Deployed to GitHub Pages at the osmanacademy.ai custom domain (see .github/workflows/pages.yml).
 module.exports = {
   "title": "Osman Academy",
   "tagline": "Learn AI through detailed e-books and practical Udemy courses.",
   "favicon": "img/favicon-32.png",
-  "url": "https://osman-ai-engineer.github.io",
-  "baseUrl": "/osman-academy-website/",
+  "url": "https://osmanacademy.ai",
+  "baseUrl": "/",
   "organizationName": "osman-ai-engineer",
   "projectName": "osman-academy-website",
   "trailingSlash": false,
