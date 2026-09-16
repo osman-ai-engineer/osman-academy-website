@@ -202,7 +202,7 @@ module.exports = {
             },
             {
               "label": "How We Teach",
-              "to": "/story#how-we-teach"
+              "to": "/#how-we-teach"
             },
             {
               "label": "Learning Programs",
@@ -240,7 +240,7 @@ module.exports = {
           ]
         },
         {
-          "title": "Information",
+          "title": "Legal",
           "items": [
             {
               "label": "Privacy Policy",
@@ -265,7 +265,7 @@ module.exports = {
           ]
         }
       ],
-      "copyright": "© 2026 Osman Academy. Independent educational material. Not affiliated with or endorsed by Anthropic or any course, certification body, or AI vendor."
+      "copyright": "© 2026 Osman Academy. All rights reserved."
     },
     "prism": {
       "theme": {

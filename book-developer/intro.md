@@ -10,11 +10,6 @@ last_reviewed: 2026-09-10
 
 # AI Developer — E-Book
 
-:::note Independent educational material
-Not affiliated with, sponsored by, or endorsed by Anthropic or any course,
-certification body, or AI vendor. See [About these books](/story).
-:::
-
 :::info In progress
 This book is being written. The chapter list below is the planned structure;
 chapters fill in over time. Follow the [changelog](./changelog.md) for updates.

@@ -35,9 +35,6 @@ export default function AcademyPage({data}) {
   }, [data.key]);
   useEffect(() => {
     if (data.className !== 'oa-home' || !content.current) return;
-    content.current.querySelectorAll('a[href="#how-we-teach"]').forEach((link) => { link.href = `${baseUrl}about#how-we-teach`; });
-    const primary = content.current.querySelector('#top .hero-ctas a');
-    if (primary) { primary.href = '#programs'; primary.textContent = 'Discover Learning Programs'; }
     content.current.querySelectorAll('h2').forEach((heading) => {
       if (heading.textContent.trim() === 'Practical AI Skills Program') heading.textContent = 'Practical AI Skills Programs';
     });

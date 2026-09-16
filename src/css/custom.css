@@ -149,7 +149,8 @@
   .oa-home .hero .wrap{max-width:1280px;}
   .oa-home .hero-inner{position:relative;display:grid;grid-template-columns:0.82fr 1.18fr;gap:48px;align-items:center;}
   .oa-home .hero-copy{max-width:480px;}
-  .oa-home .hero-art{margin:0;}
+  .oa-home .hero-art{margin:0;border-radius:10px;overflow:hidden;border:1.5px solid transparent;transition:border-color .2s,transform .2s;}
+  .oa-home .hero-art:hover{border-color:var(--green);transform:translateY(-3px);}
   .oa-home .hero-art img{display:block;width:100%;height:auto;border-radius:10px;}
   .oa-home h1{font-size:38px;line-height:1.18;font-weight:600;letter-spacing:-0.015em;margin-bottom:22px;color:var(--white);}
   .oa-home h1 em{font-style:normal;color:var(--green);}
@@ -176,11 +177,11 @@
   .oa-home #how-we-teach .head{max-width:none;}
   .oa-home #how-we-teach .head p{text-align:justify;}
   .oa-home .method{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-  .oa-home .method::before{content:"";position:absolute;top:49px;left:6%;right:6%;height:1px;
-    background:linear-gradient(90deg,var(--green),var(--green),var(--blue),var(--white));opacity:0.35;}
+  .oa-home .method::before{content:"";position:absolute;top:48px;left:6%;right:6%;height:2px;z-index:1;
+    background:linear-gradient(90deg,var(--blue),var(--blue),var(--green),var(--green));opacity:0.8;}
   .oa-home .mstep{position:relative;background:var(--card);border:1px solid var(--line);border-radius:15px;padding:26px 22px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s;}
-  .oa-home .mstep:hover{border-color:var(--green);transform:translateY(-3px);}
-  .oa-home .mnum{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;border:1px solid var(--line);background:var(--black);color:var(--green);position:relative;z-index:1;}
+  .oa-home .mstep:hover{border-color:var(--green);transform:translateY(-3px);z-index:3;}
+  .oa-home .mnum{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;border:1px solid var(--line);background:var(--black);color:var(--green);position:relative;z-index:2;}
   .oa-home .mtag{font-family:'Poppins',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;}
   .oa-home .mtag-knowledge{color:var(--blue);}
   .oa-home .mtag-wisdom{color:var(--green);}

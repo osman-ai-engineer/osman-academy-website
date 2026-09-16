@@ -7,6 +7,8 @@ export default function Root({children}) {
   const history = useHistory();
   const baseUrl = useBaseUrl('/');
   const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const showProgress = /\/books\//.test(location.pathname);
 
   useEffect(() => {
     setLoading(true);
@@ -29,7 +31,37 @@ export default function Root({children}) {
     return () => document.removeEventListener('click', handleClick, true);
   }, [history]);
 
+  useEffect(() => {
+    if (!showProgress) {
+      setProgress(0);
+      return undefined;
+    }
+    let raf = null;
+    const update = () => {
+      raf = null;
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
+      const pct = scrollHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100)) : 0;
+      setProgress(pct);
+    };
+    const onScroll = () => { if (!raf) raf = window.requestAnimationFrame(update); };
+    update();
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (raf) window.cancelAnimationFrame(raf);
+    };
+  }, [showProgress, location.pathname]);
+
   return <>
+    {showProgress && (
+      <div className="oa-progress" aria-hidden="true">
+        <div className="oa-progress__fill" style={{width: `${progress}%`}} />
+      </div>
+    )}
     {children}
     <div className={`oa-loader${loading ? ' oa-loader--visible' : ''}`} role="status" aria-live="polite" aria-label="Loading">
       <div className="oa-loader__mark" aria-hidden="true">

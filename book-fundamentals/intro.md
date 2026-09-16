@@ -10,15 +10,6 @@ last_reviewed: 2026-09-10
 
 # AI Fundamentals — E-Book
 
-:::info Draft e-book
-This e-book is being developed. Available chapters and planned material are included so you can follow its progress.
-:::
-
-:::note Independent educational material
-Not affiliated with, sponsored by, or endorsed by Anthropic or any course,
-certification body, or AI vendor. See [About these books](/story).
-:::
-
 This book is a plain-language companion for the **AI Fundamentals** program. It
 assumes no maths and no code. Its job is to make the ideas stick: explain each
 concept from first principles, show a worked example, and give you a way to check

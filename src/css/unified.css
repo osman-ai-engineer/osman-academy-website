@@ -16,7 +16,7 @@
 .academy-content .mobile-sections nav {position:static;background:#faf9f5;border:0;}
 .academy-content .rv {opacity:1;transform:none;}
 .academy-content .hero {display:block;}
-.academy-content section,.academy-content h2 {scroll-margin-top:100px;}
+.academy-content section,.academy-content h2 {scroll-margin-top:16px;}
 .academy-content button {font-family:Poppins,Arial,sans-serif;}
 .academy-content button:disabled {cursor:not-allowed;opacity:.72;transform:none;}
 .academy-content .product-grid {display:grid;grid-template-columns:1fr 1fr;gap:24px;}
